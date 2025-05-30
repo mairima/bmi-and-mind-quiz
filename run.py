@@ -161,4 +161,6 @@ def run_bmi_quiz():
        # Handle menu selection
         if choice == '1':
             show_rules()
+        elif choice == '2':
+            run_bmi_quiz() 
     
