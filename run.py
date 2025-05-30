@@ -109,4 +109,5 @@ def run_bmi_quiz():
                     print(f"Tip for {trait}: {mind_tips[trait]}")
                 break
             print("Enter a number between 1 and 5.")
-                
+    print(f"\n{user_data['name']}, total mind score: {score}/45")
+    user_data['mind_score'] = score
