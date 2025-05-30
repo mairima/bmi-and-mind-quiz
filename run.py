@@ -124,3 +124,9 @@ def run_bmi_quiz():
                 user_data['mind_score']
             ])
         print("Progress saved.")
+        
+    # Restart the game loop
+    def ask_restart():
+    try:
+        input("Game Over. Press any key to start again... ")
+        main(restart=True)
