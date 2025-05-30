@@ -12,3 +12,15 @@ HEADERS = ["Name", "Date", "BMI", "BMI Category", "Mind Quiz Score"]
 if not os.path.exists(FILENAME):
     with open(FILENAME, 'w', newline='') as f:
         csv.writer(f).writerow(HEADERS)
+        
+        # Questions for the mind quiz
+mind_questions = {
+    "Loving yourself": "To what extent do you appreciate and value yourself daily? (1-5): ",
+    "Confidence": "How willing are you to take on new challenges without fear of failure? (1-5): ",
+    "Self-Management": "How effectively do you manage your time, emotions, and responsibilities? (1-5): ",
+    "Accepting constructive criticism": "How open are you to receiving feedback and using it to grow? (1-5): ",
+    "Accepting your mistakes": "When you make a mistake, how well do you own and learn from it? (1-5): ",
+    "Avoid jealousy, envy and competition": "How often do you focus on your own growth instead of comparing yourself to others? (1-5): ",
+    "Diet, exercise and sleep": "How consistently do you maintain a balanced diet, regular activity, and restful sleep? (1-5): ",
+    "Rights and responsibilities": "How well do you stand up for your rights while respecting others and fulfilling your duties? (1-5): "
+}
