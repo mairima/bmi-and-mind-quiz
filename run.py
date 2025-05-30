@@ -4,14 +4,14 @@ import pyfiglet #To generate large ASCII art text
 
 # Questions for the mind quiz
 mind_questions = {
-    "Appreciation": "Extend of daily appreciation of yourself?(1-5):",
-    "Confidence": "How confident are you in challenges?(1-5):",
-    "Management": "How do you manage time, emotions, responsibilities?(1-5):",
-    "Accepting criticism": "How open to receiving feedback for growth?(1-5):",
-    "Accept mistakes": "How well do you own and learn from mistakes?(1-5): ",
-    "Selfgrowth": "How focused are you on your ambitions?(1-5):",
-    "Health": "Balanced diet, regular activity, restful sleep?(1-5): ",
-    "Responsibility": "Standing for rights & respecting others?(1-5):"
+    "Appreciation": "Extend of daily appreciation of yourself",
+    "Confidence": "How confident are you in challenges",
+    "Management": "How do you manage time, emotions, responsibilities",
+    "Accepting criticism": "How open to receiving feedback for growth",
+    "Accept mistakes": "How well do you own and learn from mistakes",
+    "Selfgrowth": "How focused are you on your ambitions",
+    "Health": "Balanced diet, regular activity, restful sleep",
+    "Responsibility": "Standing for rights & respecting others"
 }
 
 # Tips shown for each trait when the user scores below 5
