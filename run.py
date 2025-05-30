@@ -144,7 +144,7 @@ def main(restart=False):
 
     # Ask for name only once (or if starting fresh)
     if not restart or user_data['name'] == "":
-        name = input("Enter your name: ").strip()
+        name = input("Enter your name: \n").strip()
         if not name:
             print("Name cannot be empty.")
             return
