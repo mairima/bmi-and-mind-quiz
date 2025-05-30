@@ -167,4 +167,8 @@ def run_bmi_quiz():
             run_mind_quiz()
         else:
             print("Invalid choice. Enter 1-3.")
-    
+            
+     # If a quiz was taken, save and prompt to restart
+        if user_data['bmi'] or user_data['mind_score']:
+            save_results()
+            ask_restart()
