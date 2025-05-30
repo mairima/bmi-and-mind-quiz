@@ -51,3 +51,14 @@ user_data = {
     "bmi_category": "",
     "mind_score": None
 }
+
+# Function to display the rules of the game
+def show_rules():
+    print("""\n=== QUIZ RULES ===
+1. Choose options from the main menu using the number provided.
+2. In BMI quiz, provide your height and weight in numbers. Decimals with a dot (e.g., 1.60 for height in meters).
+3. In the Mind Quiz, answer each question from 1 (lowest) to 5 (highest).
+4. You’ll get improvement tips if your score is below 5 on any question.
+5. Results are saved only after completing a quiz.
+6. You can quit after completing a quiz. After the game ends, press any key to restart.
+""")
