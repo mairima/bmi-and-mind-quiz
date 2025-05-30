@@ -14,14 +14,14 @@ if not os.path.exists(FILENAME):
 
 # Questions for the mind quiz
 mind_questions = {
-    "Loving yourself": "To what extent do you appreciate and value yourself daily? (1-5): ",
-    "Confidence": "How confident are you in challenges? (1-5): ",
-    "Self-Management": "How effectively do you manage your time, emotions, and responsibilities? (1-5): ",
-    "Accepting constructive criticism": "How open are you to receiving feedback and using it to grow? (1-5): ",
-    "Accepting your mistakes": "When you make a mistake, how well do you own and learn from it? (1-5): ",
-    "Avoid jealousy, envy and competition": "How often do you focus on your own growth instead of comparing yourself to others? (1-5): ",
-    "Diet, exercise and sleep": "How consistently do you maintain a balanced diet, regular activity, and restful sleep? (1-5): ",
-    "Rights and responsibilities": "How well do you stand up for your rights while respecting others and fulfilling your duties? (1-5): "
+    "Appreciate yourself": "To what extent daily?(1-5):",
+    "Confidence": "How confident are you in challenges?(1-5):",
+    "Management": "How do you manage time, emotions, responsibilities?(1-5):",
+    "Accepting criticism": "How open to receiving feedback for growth?(1-5):",
+    "Accept mistakes": "How well do you own and learn from it?(1-5): ",
+    "Unhealthy competition": "Selfgrowth instead of comparing others?(1-5):",
+    "Health": "Balanced diet, regular activity, restful sleep?(1-5): ",
+    "Responsibility": "Standing for rights & respecting others?(1-5):"
 }
 
 # Tips shown for each trait when the user scores below 5
@@ -32,8 +32,8 @@ mind_tips = {
     "Accepting constructive criticism": "Pause, reflect, and grow from it.",
     "Accepting your mistakes": "Learn and improve from your errors.",
     "Avoid jealousy, envy and competition": "Focus on your journey.",
-    "Diet, exercise and sleep": "Eat balanced meals, move regularly, and rest.",
-    "Rights and responsibilities": "Stand up respectfully and stay accountable."
+    "Diet, exercise, sleep": "Eat balanced meals, move regularly, and rest.",
+    "Rights & responsibilities": "Stand up respectfully and stay accountable."
 }
 
 # Tips based on BMI category
@@ -56,11 +56,11 @@ user_data = {
 def show_rules():
     print("""\n=== QUIZ RULES ===
 1. Choose options from the main menu using the number provided.
-2. In BMI quiz, provide your height and weight in numbers. Decimals with a dot (e.g., 1.60 for height in meters).
+2. In BMI quiz, provide your height and weight in numbers.
 3. In the Mind Quiz, answer each question from 1 (lowest) to 5 (highest).
 4. You’ll get improvement tips if your score is below 5 on any question.
 5. Results are saved only after completing a quiz.
-6. You can quit after completing a quiz. After the game ends, press any key to restart.
+6. You can quit after completing a quiz. Press any key to restart.
 """)
 
 
