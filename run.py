@@ -1,16 +1,6 @@
 # Import necessary modules
-import csv                  # For writing quiz results to a CSV file
-import os                   # For checking file existence
-from datetime import datetime  # For timestamping results
-
-# Set the filename for saving quiz results
-FILENAME = "quiz_results.csv"
-# Define the CSV file headers
-HEADERS = ["Name", "Date", "BMI", "BMI Category", "Mind Quiz Score"]
-# Create the file with headers if it doesn't exist yet
-if not os.path.exists(FILENAME):
-    with open(FILENAME, 'w', newline='') as f:
-        csv.writer(f).writerow(HEADERS)
+import time #To pause output between rules for readability
+import pyfiglet #To generate large ASCII art text
 
 # Questions for the mind quiz
 mind_questions = {
@@ -89,9 +79,7 @@ def run_bmi_quiz():
     # Give a tip if not in the normal range
     if category != "Normal":
         print(f"Tip: {bmi_tips[category]}")
-    # Save BMI results
-    user_data['bmi'] = bmi
-    user_data['bmi_category'] = category
+  
 
 
 # Function to run the mind personality quiz
@@ -113,21 +101,6 @@ def run_mind_quiz():
     print(f"\n{user_data['name']}, total mind score: {score}/45")
     user_data['mind_score'] = score
 
-
-# Save the results to the CSV file
-def save_results():
-    if user_data['bmi'] is not None or user_data['mind_score'] is not None:
-        with open(FILENAME, 'a', newline='') as f:
-            csv.writer(f).writerow([
-                user_data['name'],
-                datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                user_data['bmi'],
-                user_data['bmi_category'],
-                user_data['mind_score']
-            ])
-        print("Progress saved.")
-
-
 # Restart the game loop
 def ask_restart():
     try:
@@ -143,11 +116,16 @@ def main(restart=False):
     print("=== WELCOME TO THE HEALTH & MIND QUIZ GAME ===")
 
     # Ask for name only once (or if starting fresh)
+    while True
     if not restart or user_data['name'] == "":
         name = input("Enter your name: \n").strip()
+        clear()
         if not name:
             print("Name cannot be empty.")
             return
+        if not name.isalpha():
+            print("Name must contain only letters.")
+            
         user_data["name"] = name
 
     # Reset previous quiz data
@@ -181,4 +159,5 @@ def main(restart=False):
 
 # Entry point for the script
 if __name__ == "__main__":
+    clear()
     main()
