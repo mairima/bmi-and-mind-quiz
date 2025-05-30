@@ -2,7 +2,6 @@
 import csv                  # For writing quiz results to a CSV file
 import os                   # For checking file existence
 from datetime import datetime  # For timestamping results
-import sys                  # For exiting the program if needed
 
 # Set the filename for saving quiz results
 FILENAME = "quiz_results.csv"
@@ -52,6 +51,7 @@ user_data = {
     "mind_score": None
 }
 
+
 # Function to display the rules of the game
 def show_rules():
     print("""\n=== QUIZ RULES ===
@@ -63,6 +63,7 @@ def show_rules():
 6. You can quit after completing a quiz. After the game ends, press any key to restart.
 """)
 
+
 # Input function that checks for valid float input
 def get_valid_float(prompt):
     while True:
@@ -70,26 +71,29 @@ def get_valid_float(prompt):
             return float(input(prompt))
         except ValueError:
             print("Enter a valid number.")
-  
+
+
 # Function to run the BMI quiz
 def run_bmi_quiz():
     print("\n=== BMI QUIZ ===")
     weight = get_valid_float("Enter weight in kg: ")
     height = get_valid_float("Enter height in meters: ")
-    bmi = round(weight/(height** 2), 1)
+    bmi = round(weight / (height ** 2), 1)
+
     # Determine BMI category
     category = ("Underweight" if bmi < 18.5 else
                 "Normal" if bmi < 25 else
                 "Overweight" if bmi < 30 else "Obese")
     print(f"\n{user_data['name']}, your BMI is {bmi} ({category})")
-    
+
     # Give a tip if not in the normal range
     if category != "Normal":
         print(f"Tip: {bmi_tips[category]}")
     # Save BMI results
     user_data['bmi'] = bmi
     user_data['bmi_category'] = category
-    
+
+
 # Function to run the mind personality quiz
 def run_mind_quiz():
     print("\n=== MIND PERSONALITY QUIZ ===")
@@ -109,6 +113,7 @@ def run_mind_quiz():
     print(f"\n{user_data['name']}, total mind score: {score}/45")
     user_data['mind_score'] = score
 
+
 # Save the results to the CSV file
 def save_results():
     if user_data['bmi'] is not None or user_data['mind_score'] is not None:
@@ -122,6 +127,7 @@ def save_results():
             ])
         print("Progress saved.")
 
+
 # Restart the game loop
 def ask_restart():
     try:
@@ -130,6 +136,7 @@ def ask_restart():
     except Exception:
         print("Unexpected input. Restarting game...")
         main(restart=True)
+
 
 # Main function: shows menu and starts quiz
 def main(restart=False):
@@ -160,7 +167,7 @@ def main(restart=False):
         if choice == '1':
             show_rules()
         elif choice == '2':
-            run_bmi_quiz() 
+            run_bmi_quiz()
         elif choice == '3':
             run_mind_quiz()
         else:
@@ -170,6 +177,7 @@ def main(restart=False):
         if user_data['bmi'] or user_data['mind_score']:
             save_results()
             ask_restart()
+
 
 # Entry point for the script
 if __name__ == "__main__":
