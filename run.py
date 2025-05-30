@@ -150,3 +150,9 @@ def run_bmi_quiz():
     user_data["bmi_category"] = ""
     user_data["mind_score"] = None
     
+    while True:
+        # Show main menu
+        print("\n=== MAIN MENU ===")
+        print("1. View Rules")
+
+    
