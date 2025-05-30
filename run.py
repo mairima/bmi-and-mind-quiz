@@ -156,5 +156,5 @@ def run_bmi_quiz():
         print("1. View Rules")
         print("2. Take BMI Quiz")
         print("3. Take Mind Quiz")
-        choice = input("Choose an option (1-3): ").strip()
+     
     
