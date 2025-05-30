@@ -79,7 +79,7 @@ def get_valid_float(prompt):
         try:
             return float(input(prompt))
         except ValueError:
-            print("Enter a valid number.")
+           print("❌ Enter a valid number.")
 
 
 # Function to run the BMI quiz
