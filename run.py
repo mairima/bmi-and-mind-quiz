@@ -172,3 +172,7 @@ def run_bmi_quiz():
         if user_data['bmi'] or user_data['mind_score']:
             save_results()
             ask_restart()
+            
+# Entry point for the script
+if __name__ == "__main__":
+    main()
