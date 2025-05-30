@@ -79,7 +79,7 @@ def get_valid_float(prompt):
         try:
             return float(input(prompt))
         except ValueError:
-           print("❌ Enter a valid number.")
+            print("❌ Enter a valid number.")
 
 
 # Function to run the BMI quiz
@@ -116,17 +116,17 @@ def run_mind_quiz():
     score = 0
     # Iterate through each question and collect a valid response
     for trait, question in mind_questions.items():
-        while True: 
+        while True:
             print("\n=== MIND PERSONALITY QUIZ ===\n")
             print("Enter 1 (lowest) to 5 (highest)")
             answer = input(f"{question}?: ")
-            clear()            
+            clear()
             if answer.isdigit() and 1 <= int(answer) <= 5:
                 rating = int(answer)
                 score += rating
                 # Show a tip for ratings less than 5
                 if rating < 5:
-                            print(
+                    print(
                         f"Q: {question}\n\n💡 Tip for {trait}: "
                         f"{mind_tips[trait]}"
                     )
@@ -143,10 +143,12 @@ def run_mind_quiz():
     print(f"\n{user_data['name']}, total mind score: {score}/45\n")
     user_data['mind_score'] = score
 
+
 # Restart the game loop
 def ask_restart():
     try:
-        input("Game Over. Press any key to start again... ")
+        input("Quiz Over. Press Enter to start again...\n")
+        clear()
         main(restart=True)
     except Exception:
         print("Unexpected input. Restarting game...")
