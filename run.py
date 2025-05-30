@@ -111,3 +111,8 @@ def run_bmi_quiz():
             print("Enter a number between 1 and 5.")
     print(f"\n{user_data['name']}, total mind score: {score}/45")
     user_data['mind_score'] = score
+    
+    # Save the results to the CSV file
+    def save_results():
+    if user_data['bmi'] is not None or user_data['mind_score'] is not None:
+        with open(FILENAME, 'a', newline='') as f:
