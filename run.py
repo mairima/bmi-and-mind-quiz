@@ -133,3 +133,6 @@ def run_bmi_quiz():
     except Exception:
         print("⚠️ Unexpected input. Restarting game...")
         main(restart=True)
+    # Main function: shows menu and starts quiz
+    def main(restart=False):
+    print("=== WELCOME TO THE HEALTH & MIND QUIZ GAME ===")
