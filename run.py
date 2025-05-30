@@ -130,3 +130,6 @@ def run_bmi_quiz():
     try:
         input("Game Over. Press any key to start again... ")
         main(restart=True)
+    except Exception:
+        print("⚠️ Unexpected input. Restarting game...")
+        main(restart=True)
