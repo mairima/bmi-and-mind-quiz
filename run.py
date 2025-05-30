@@ -165,4 +165,6 @@ def run_bmi_quiz():
             run_bmi_quiz() 
         elif choice == '3':
             run_mind_quiz()
+        else:
+            print("Invalid choice. Enter 1-3.")
     
