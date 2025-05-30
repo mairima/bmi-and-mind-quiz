@@ -96,3 +96,9 @@ def run_bmi_quiz():
     def run_mind_quiz():
     print("\n=== MIND PERSONALITY QUIZ ===")
     score = 0  
+    
+    # Iterate through each question and collect a valid response
+    for trait, question in mind_questions.items():
+        while True:
+            answer = input(question)
+           
