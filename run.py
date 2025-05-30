@@ -144,3 +144,7 @@ def run_bmi_quiz():
             print("Name cannot be empty.")
             return
         user_data["name"] = name
+        
+    # Reset previous quiz data
+    user_data["bmi"] = None
+  
