@@ -77,3 +77,8 @@ def run_bmi_quiz():
     weight = get_valid_float("Enter weight in kg: ")
     height = get_valid_float("Enter height in meters: ")
     bmi = round(weight / (height ** 2), 1)  
+    
+ # Determine BMI category
+    category = ("Underweight" if bmi < 18.5 else
+                "Normal" if bmi < 25 else
+                "Overweight" if bmi < 30 else "Obese")    
