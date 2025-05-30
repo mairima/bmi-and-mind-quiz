@@ -104,5 +104,9 @@ def run_bmi_quiz():
             if answer.isdigit() and 1 <= int(answer) <= 5:
                 rating = int(answer)
                 score += rating
-       
+        # Show a tip for ratings less than 5
+                if rating < 5:
+                    print(f"Tip for {trait}: {mind_tips[trait]}")
+                break
+            print("Enter a number between 1 and 5.")
                 
