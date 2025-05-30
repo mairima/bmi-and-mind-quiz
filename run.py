@@ -92,4 +92,7 @@ def run_bmi_quiz():
     user_data['bmi'] = bmi
     user_data['bmi_category'] = category
     
-   
+    # Function to run the mind personality quiz
+    def run_mind_quiz():
+    print("\n=== MIND PERSONALITY QUIZ ===")
+    score = 0  
