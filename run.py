@@ -211,4 +211,6 @@ def main(restart=False):
 # Entry point for the script
 if __name__ == "__main__":
     clear()
+    logo = pyfiglet.figlet_format("Health & Mind Quiz", font="big")
+    print(logo)
     main()
