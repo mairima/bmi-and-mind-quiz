@@ -102,6 +102,11 @@ def run_bmi_quiz():
     # Give a tip if not in the normal range
     if category != "Normal":
         print(f"Tip: {bmi_tips[category]}")
+        print(f"\n💡 Tip: {bmi_tips[category]}\n")
+    # Save BMI results
+    user_data['bmi'] = bmi
+    user_data['bmi_category'] = category
+
   
 
 
