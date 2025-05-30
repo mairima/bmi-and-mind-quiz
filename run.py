@@ -140,4 +140,7 @@ def run_bmi_quiz():
      # Ask for name only once (or if starting fresh)
     if not restart or user_data['name'] == "":
         name = input("Enter your name: ").strip()
-       
+        if not name:
+            print("Name cannot be empty.")
+            return
+        user_data["name"] = name
