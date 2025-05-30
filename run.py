@@ -41,6 +41,12 @@ user_data = {
     "mind_score": None
 }
 
+def clear():
+    """
+    Clear function to clean-up the terminal so things don't get messy.
+    """
+    print("\033c")
+
 
 # Function to display the rules of the game
 def show_rules():
