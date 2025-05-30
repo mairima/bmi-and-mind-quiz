@@ -12,11 +12,11 @@ HEADERS = ["Name", "Date", "BMI", "BMI Category", "Mind Quiz Score"]
 if not os.path.exists(FILENAME):
     with open(FILENAME, 'w', newline='') as f:
         csv.writer(f).writerow(HEADERS)
-        
-        # Questions for the mind quiz
+
+# Questions for the mind quiz
 mind_questions = {
     "Loving yourself": "To what extent do you appreciate and value yourself daily? (1-5): ",
-    "Confidence": "How willing are you to take on new challenges without fear of failure? (1-5): ",
+    "Confidence": "How confident are you in challenges? (1-5): ",
     "Self-Management": "How effectively do you manage your time, emotions, and responsibilities? (1-5): ",
     "Accepting constructive criticism": "How open are you to receiving feedback and using it to grow? (1-5): ",
     "Accepting your mistakes": "When you make a mistake, how well do you own and learn from it? (1-5): ",
@@ -76,27 +76,24 @@ def run_bmi_quiz():
     print("\n=== BMI QUIZ ===")
     weight = get_valid_float("Enter weight in kg: ")
     height = get_valid_float("Enter height in meters: ")
-    bmi = round(weight / (height ** 2), 1)  
-    
+    bmi = round(weight/(height** 2), 1)
     # Determine BMI category
     category = ("Underweight" if bmi < 18.5 else
                 "Normal" if bmi < 25 else
-                "Overweight" if bmi < 30 else "Obese")    
+                "Overweight" if bmi < 30 else "Obese")
     print(f"\n{user_data['name']}, your BMI is {bmi} ({category})")
     
     # Give a tip if not in the normal range
     if category != "Normal":
-        print(f"💡 Tip: {bmi_tips[category]}")
-        
+        print(f"Tip: {bmi_tips[category]}")
     # Save BMI results
     user_data['bmi'] = bmi
     user_data['bmi_category'] = category
     
-    # Function to run the mind personality quiz
-    def run_mind_quiz():
+# Function to run the mind personality quiz
+def run_mind_quiz():
     print("\n=== MIND PERSONALITY QUIZ ===")
-    score = 0  
-    
+    score = 0
     # Iterate through each question and collect a valid response
     for trait, question in mind_questions.items():
         while True:
@@ -104,19 +101,19 @@ def run_bmi_quiz():
             if answer.isdigit() and 1 <= int(answer) <= 5:
                 rating = int(answer)
                 score += rating
-        # Show a tip for ratings less than 5
+                # Show a tip for ratings less than 5
                 if rating < 5:
                     print(f"Tip for {trait}: {mind_tips[trait]}")
                 break
             print("Enter a number between 1 and 5.")
     print(f"\n{user_data['name']}, total mind score: {score}/45")
     user_data['mind_score'] = score
-    
-    # Save the results to the CSV file
-    def save_results():
+
+# Save the results to the CSV file
+def save_results():
     if user_data['bmi'] is not None or user_data['mind_score'] is not None:
         with open(FILENAME, 'a', newline='') as f:
-             csv.writer(f).writerow([
+            csv.writer(f).writerow([
                 user_data['name'],
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 user_data['bmi'],
@@ -124,32 +121,33 @@ def run_bmi_quiz():
                 user_data['mind_score']
             ])
         print("Progress saved.")
-        
-    # Restart the game loop
-    def ask_restart():
+
+# Restart the game loop
+def ask_restart():
     try:
         input("Game Over. Press any key to start again... ")
         main(restart=True)
     except Exception:
-        print("⚠️ Unexpected input. Restarting game...")
+        print("Unexpected input. Restarting game...")
         main(restart=True)
-    # Main function: shows menu and starts quiz
-    def main(restart=False):
+
+# Main function: shows menu and starts quiz
+def main(restart=False):
     print("=== WELCOME TO THE HEALTH & MIND QUIZ GAME ===")
-    
-     # Ask for name only once (or if starting fresh)
+
+    # Ask for name only once (or if starting fresh)
     if not restart or user_data['name'] == "":
         name = input("Enter your name: ").strip()
         if not name:
             print("Name cannot be empty.")
             return
         user_data["name"] = name
-        
+
     # Reset previous quiz data
     user_data["bmi"] = None
     user_data["bmi_category"] = ""
     user_data["mind_score"] = None
-    
+
     while True:
         # Show main menu
         print("\n=== MAIN MENU ===")
@@ -157,8 +155,8 @@ def run_bmi_quiz():
         print("2. Take BMI Quiz")
         print("3. Take Mind Quiz")
         choice = input("Choose an option (1-3): ").strip()
-        
-       # Handle menu selection
+
+        # Handle menu selection
         if choice == '1':
             show_rules()
         elif choice == '2':
@@ -167,12 +165,12 @@ def run_bmi_quiz():
             run_mind_quiz()
         else:
             print("Invalid choice. Enter 1-3.")
-            
-     # If a quiz was taken, save and prompt to restart
+
+        # If a quiz was taken, save and prompt to restart
         if user_data['bmi'] or user_data['mind_score']:
             save_results()
             ask_restart()
-            
+
 # Entry point for the script
 if __name__ == "__main__":
     main()
