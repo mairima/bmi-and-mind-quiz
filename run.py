@@ -1,10 +1,9 @@
 # Import necessary modules
 import time #To pause output between rules for readability
-import pyfiglet #To generate large ASCII art text
 
 # Questions for the mind quiz
 mind_questions = {
-    "Appreciation": "Extend of daily appreciation of yourself",
+    "Appreciation": "Extent of daily appreciation of yourself",
     "Confidence": "How confident are you in challenges",
     "Management": "How do you manage time, emotions, responsibilities",
     "Accepting criticism": "How open to receiving feedback for growth",
@@ -16,7 +15,7 @@ mind_questions = {
 
 # Tips shown for each trait when the user scores below 5
 mind_tips = {
-    "Appreciation": "Practice affirmations and self-care.",
+    "Appreciation": "Practice self-care.",
     "Confidence": "Set small goals and celebrate wins.",
     "Management": "Use planners and manage priorities.",
     "Accepting criticism": "Pause, reflect, and grow from it.",
@@ -42,11 +41,13 @@ user_data = {
 }
 
 
+import os
+
 def clear():
     """
     Clear function to clean-up the terminal so things don't get messy.
     """
-    print("\033c")
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 # Function to display the rules of the game
@@ -80,17 +81,34 @@ def get_valid_float(prompt):
             return float(input(prompt))
         except ValueError:
             print("❌ Enter a valid number.")
+        except (KeyboardInterrupt, EOFError):
+            print("\nInput cancelled. Exiting.")
+            exit()
 
 
 # Function to run the BMI quiz
 def run_bmi_quiz():
     print("\n=== BMI QUIZ ===\n")
-    weight = get_valid_float("Enter weight in kg: ")
+    while True:
+        weight = get_valid_float("Enter weight in kg: ")
+        if weight <= 0:
+            print("❌ Weight must be greater than zero. Please try again.")
+        else:
+            break
     clear()
     print("\n=== BMI QUIZ ===\n")
-    height = get_valid_float("Enter height in meters: ")
+    while True:
+        height = get_valid_float("Enter height in meters: ")
+        if height <= 0:
+            print("❌ Height must be greater than zero. Please try again.")
+        else:
+            break
     clear()
-    bmi = round(weight / (height ** 2), 1)
+    try:
+        bmi = round(weight / (height ** 2), 1)
+    except ZeroDivisionError:
+        print("❌ Height cannot be zero. Please try again.")
+        return run_bmi_quiz()
 
     # Determine BMI category
     category = ("Underweight" if bmi < 18.5 else
@@ -101,68 +119,77 @@ def run_bmi_quiz():
 
     # Give a tip if not in the normal range
     if category != "Normal":
-        print(f"Tip: {bmi_tips[category]}")
         print(f"\n💡 Tip: {bmi_tips[category]}\n")
     # Save BMI results
     user_data['bmi'] = bmi
     user_data['bmi_category'] = category
 
-  
-
 
 # Function to run the mind personality quiz
 def run_mind_quiz():
-    print("\n=== MIND PERSONALITY QUIZ ===")
     score = 0
     # Iterate through each question and collect a valid response
     for trait, question in mind_questions.items():
         while True:
-            print("\n=== MIND PERSONALITY QUIZ ===\n")
-            print("Enter 1 (lowest) to 5 (highest)")
-            answer = input(f"{question}?: ")
+            try:
+                answer = input(f"{question}?: ")
+            except (KeyboardInterrupt, EOFError):
+                print("\nInput cancelled. Exiting.")
+                exit()
             clear()
-            if answer.isdigit() and 1 <= int(answer) <= 5:
+            if answer.isdigit():
                 rating = int(answer)
-                score += rating
-                # Show a tip for ratings less than 5
-                if rating < 5:
-                    print(
-                        f"Q: {question}\n\n💡 Tip for {trait}: "
-                        f"{mind_tips[trait]}"
-                    )
-                    # time.sleep(4)
-                    input("\nPress Enter to Continue\n")
-                    clear()
-                else:
-                    clear()
-                break
-            clear()
-            print(f"❌ {answer} is invalid. Enter a number between 1 and 5.")
-
-    print("\n=== MIND PERSONALITY QUIZ RESULTS ===\n")
-    print(f"\n{user_data['name']}, total mind score: {score}/45\n")
+                if 1 <= rating <= 5:
+                    score += rating
+                    # Show a tip for ratings less than 5
+                    if rating < 5:
+                        print(
+                            f"Q: {question}\n\n💡 Tip for {trait}: "
+                            f"{mind_tips[trait]}"
+                        )
+                        input("\nPress Enter to Continue\n")
+                        clear()
+                    else:
+                        clear()
+                    break
+            else:
+                print(f"❌ {answer} is invalid. Enter a number between 1 and 5.")
     user_data['mind_score'] = score
+    try:
+        input("Quiz Over. Press Enter to start again...\n")
+    except (KeyboardInterrupt, EOFError):
+        print("\nInput cancelled. Exiting.")
+        exit()
+    clear()
 
 
 # Restart the game loop
 def ask_restart():
-    try:
-        input("Quiz Over. Press Enter to start again...\n")
-        clear()
-        main(restart=True)
-    except Exception:
-        print("Unexpected input. Restarting game...")
-        main(restart=True)
+    while True:
+        try:
+            restart = input("Would you like to restart? (y/n): ").strip().lower()
+        except (KeyboardInterrupt, EOFError):
+            print("\nInput cancelled. Exiting.")
+            exit()
+        if restart == 'y':
+            clear()
+            main(restart=True)
+            break
+        elif restart == 'n':
+            clear()
+            print('Thank you for using Health & Mind Quiz Game')
+            exit()
+        else:
+            print(f"❌ {restart} is an invalid choice. Enter 'y' or 'n'.")
 
-
-# Main function: shows menu and starts quiz
 def main(restart=False):
-    print("=== WELCOME TO THE HEALTH & MIND QUIZ GAME ===")
-
-    # Ask for name only once (or if starting fresh)
     if not restart:
         while True:
-            name = input("Enter your name: \n").strip()
+            try:
+                name = input("Enter your name: \n").strip()
+            except (KeyboardInterrupt, EOFError):
+                print("\nInput cancelled. Exiting.")
+                exit()
             clear()
             if not name:
                 print(f"❌ {name} is invalid. Name cannot be empty.")
@@ -184,7 +211,11 @@ def main(restart=False):
         print("2. Take BMI Quiz")
         print("3. Take Mind Quiz")
         print("4. Exit")
-        choice = input("Choose an option (1-4): ").strip()
+        try:
+            choice = input("Choose an option (1-4): ").strip()
+        except (KeyboardInterrupt, EOFError):
+            print("\nInput cancelled. Exiting.")
+            exit()
         clear()
 
         # Handle menu selection
@@ -201,16 +232,19 @@ def main(restart=False):
         else:
             print(f"❌ {choice} is an invalid choice. Enter 1-4.")
 
-
         # If a quiz was taken, save and prompt to restart
         if user_data['bmi'] or user_data['mind_score']:
-           
             ask_restart()
-
 
 # Entry point for the script
 if __name__ == "__main__":
-    clear()
-    logo = pyfiglet.figlet_format("Health & Mind Quiz", font="big")
-    print(logo)
+    try:
+        import pyfiglet
+        clear()
+        logo = pyfiglet.figlet_format("Health & Mind Quiz", font="big")
+        print(logo)
+    except ImportError:
+        clear()
+        print("=== Health & Mind Quiz ===")
+        print("(Install pyfiglet for ASCII art logo)")
     main()
