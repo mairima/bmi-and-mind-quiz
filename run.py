@@ -84,9 +84,12 @@ def get_valid_float(prompt):
 
 # Function to run the BMI quiz
 def run_bmi_quiz():
-    print("\n=== BMI QUIZ ===")
+    print("\n=== BMI QUIZ ===\n")
     weight = get_valid_float("Enter weight in kg: ")
+    clear()
+    print("\n=== BMI QUIZ ===\n")
     height = get_valid_float("Enter height in meters: ")
+    clear()
     bmi = round(weight / (height ** 2), 1)
 
     # Determine BMI category
