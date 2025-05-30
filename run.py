@@ -36,3 +36,11 @@ mind_tips = {
     "Diet, exercise and sleep": "Eat balanced meals, move regularly, and rest.",
     "Rights and responsibilities": "Stand up respectfully and stay accountable."
 }
+
+# Tips based on BMI category
+bmi_tips = {
+    "Underweight": "Increase healthy calories and consult a doctor.",
+    "Normal": "Keep up your good habits!",
+    "Overweight": "Be active and watch portion sizes.",
+    "Obese": "Seek a structured plan with professional help."
+}
