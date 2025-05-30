@@ -153,7 +153,7 @@ def ask_restart():
 
 # Main function: shows menu and starts quiz
 def main(restart=False):
-    print("=== WELCOME TO THE HEALTH & MIND QUIZ GAME ===")
+    print("=== WELCOME TO THE BMI & MIND QUIZ GAME ===")
 
     # Ask for name only once (or if starting fresh)
     if not restart:
