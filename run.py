@@ -16,7 +16,7 @@ mind_questions = {
 
 # Tips shown for each trait when the user scores below 5
 mind_tips = {
-    "Appreciation": "Practice affirmations and self-care.",
+    "Appreciation": "Practice self-care.",
     "Confidence": "Set small goals and celebrate wins.",
     "Management": "Use planners and manage priorities.",
     "Accepting criticism": "Pause, reflect, and grow from it.",
