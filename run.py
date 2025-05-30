@@ -41,6 +41,7 @@ user_data = {
     "mind_score": None
 }
 
+
 def clear():
     """
     Clear function to clean-up the terminal so things don't get messy.
@@ -50,14 +51,26 @@ def clear():
 
 # Function to display the rules of the game
 def show_rules():
-    print("""\n=== QUIZ RULES ===
-1. Choose options from the main menu using the number provided.
-2. In BMI quiz, provide your height and weight in numbers.
-3. In the Mind Quiz, answer each question from 1 (lowest) to 5 (highest).
-4. You’ll get improvement tips if your score is below 5 on any question.
-5. Results are saved only after completing a quiz.
-6. You can quit after completing a quiz. Press any key to restart.
-""")
+    print("\n=== QUIZ RULES ===\n")
+    time.sleep(0.5)
+    print("1. Choose options from the main menu using the number provided.")
+    time.sleep(0.5)
+    print("2. In BMI quiz, provide your height and weight in numbers.")
+    time.sleep(0.5)
+    print(
+        "3. In the Mind Quiz, answer each question from "
+        "1 (lowest) to 5 (highest)."
+    )
+    time.sleep(0.5)
+    print(
+        "4. You'll get improvement tips if your score is "
+        "below 5 on any question."
+    )
+    time.sleep(0.5)
+    print("5. You can quit after completing a quiz. Press enter to restart.")
+    time.sleep(0.5)
+    input("\nPress Enter to Return back to the Menu\n")
+    clear()
 
 
 # Input function that checks for valid float input
