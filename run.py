@@ -116,3 +116,11 @@ def run_bmi_quiz():
     def save_results():
     if user_data['bmi'] is not None or user_data['mind_score'] is not None:
         with open(FILENAME, 'a', newline='') as f:
+             csv.writer(f).writerow([
+                user_data['name'],
+                datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                user_data['bmi'],
+                user_data['bmi_category'],
+                user_data['mind_score']
+            ])
+        print("Progress saved.")
