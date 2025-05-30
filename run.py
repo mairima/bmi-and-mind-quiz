@@ -14,7 +14,7 @@ if not os.path.exists(FILENAME):
 
 # Questions for the mind quiz
 mind_questions = {
-    "Appreciate yourself": "To what extent daily?(1-5):",
+    "Appreciation": "Extend of daily appreciation of yourself?(1-5):",
     "Confidence": "How confident are you in challenges?(1-5):",
     "Management": "How do you manage time, emotions, responsibilities?(1-5):",
     "Accepting criticism": "How open to receiving feedback for growth?(1-5):",
@@ -26,14 +26,14 @@ mind_questions = {
 
 # Tips shown for each trait when the user scores below 5
 mind_tips = {
-    "Loving yourself": "Practice affirmations and self-care.",
+    "Appreciation": "Practice affirmations and self-care.",
     "Confidence": "Set small goals and celebrate wins.",
-    "Self-Management": "Use planners and manage priorities.",
-    "Accepting constructive criticism": "Pause, reflect, and grow from it.",
-    "Accepting your mistakes": "Learn and improve from your errors.",
-    "Avoid jealousy, envy and competition": "Focus on your journey.",
-    "Diet, exercise, sleep": "Eat balanced meals, move regularly, and rest.",
-    "Rights & responsibilities": "Stand up respectfully and stay accountable."
+    "Management": "Use planners and manage priorities.",
+    "Accepting criticism": "Pause, reflect, and grow from it.",
+    "Accept mistakes": "Learn and improve from your errors.",
+    "Unhealthy competition": "Focus on your journey.",
+    "Health": "Eat balanced meals, move regularly, and rest.",
+    "Responsibility": "Stand up respectfully and stay accountable."
 }
 
 # Tips based on BMI category
