@@ -24,3 +24,15 @@ mind_questions = {
     "Diet, exercise and sleep": "How consistently do you maintain a balanced diet, regular activity, and restful sleep? (1-5): ",
     "Rights and responsibilities": "How well do you stand up for your rights while respecting others and fulfilling your duties? (1-5): "
 }
+
+# Tips shown for each trait when the user scores below 5
+mind_tips = {
+    "Loving yourself": "Practice affirmations and self-care.",
+    "Confidence": "Set small goals and celebrate wins.",
+    "Self-Management": "Use planners and manage priorities.",
+    "Accepting constructive criticism": "Pause, reflect, and grow from it.",
+    "Accepting your mistakes": "Learn and improve from your errors.",
+    "Avoid jealousy, envy and competition": "Focus on your journey.",
+    "Diet, exercise and sleep": "Eat balanced meals, move regularly, and rest.",
+    "Rights and responsibilities": "Stand up respectfully and stay accountable."
+}
