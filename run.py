@@ -163,4 +163,6 @@ def run_bmi_quiz():
             show_rules()
         elif choice == '2':
             run_bmi_quiz() 
+        elif choice == '3':
+            run_mind_quiz()
     
