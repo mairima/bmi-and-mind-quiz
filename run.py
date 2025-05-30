@@ -19,7 +19,7 @@ mind_questions = {
     "Management": "How do you manage time, emotions, responsibilities?(1-5):",
     "Accepting criticism": "How open to receiving feedback for growth?(1-5):",
     "Accept mistakes": "How well do you own and learn from mistakes?(1-5): ",
-    "Unhealthy competition": "Selfgrowth instead of comparing others?(1-5):",
+    "Selfgrowth": "How focused are you on your ambitions?(1-5):",
     "Health": "Balanced diet, regular activity, restful sleep?(1-5): ",
     "Responsibility": "Standing for rights & respecting others?(1-5):"
 }
@@ -31,7 +31,7 @@ mind_tips = {
     "Management": "Use planners and manage priorities.",
     "Accepting criticism": "Pause, reflect, and grow from it.",
     "Accept mistakes": "Learn and improve from your errors.",
-    "Unhealthy competition": "Focus on your journey.",
+    "Selfgrowth": "Focus on your journey.",
     "Health": "Eat balanced meals, move regularly, and rest.",
     "Responsibility": "Stand up respectfully and stay accountable."
 }
