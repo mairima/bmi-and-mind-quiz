@@ -160,17 +160,17 @@ def main(restart=False):
     print("=== WELCOME TO THE HEALTH & MIND QUIZ GAME ===")
 
     # Ask for name only once (or if starting fresh)
-    while True
-    if not restart or user_data['name'] == "":
-        name = input("Enter your name: \n").strip()
-        clear()
-        if not name:
-            print("Name cannot be empty.")
-            return
-        if not name.isalpha():
-            print("Name must contain only letters.")
-            
-        user_data["name"] = name
+    if not restart:
+        while True:
+            name = input("Enter your name: \n").strip()
+            clear()
+            if not name:
+                print(f"❌ {name} is invalid. Name cannot be empty.")
+            elif not name.isalpha():
+                print(f"❌ {name} is invalid. Names can only use letters.")
+            else:
+                user_data["name"] = name
+                break
 
     # Reset previous quiz data
     user_data["bmi"] = None
