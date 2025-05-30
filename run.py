@@ -44,3 +44,10 @@ bmi_tips = {
     "Overweight": "Be active and watch portion sizes.",
     "Obese": "Seek a structured plan with professional help."
 }
+# Store user data during the game
+user_data = {
+    "name": "",
+    "bmi": None,
+    "bmi_category": "",
+    "mind_score": None
+}
