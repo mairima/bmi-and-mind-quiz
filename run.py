@@ -183,7 +183,9 @@ def main(restart=False):
         print("1. View Rules")
         print("2. Take BMI Quiz")
         print("3. Take Mind Quiz")
-        choice = input("Choose an option (1-3): ").strip()
+        print("4. Exit")
+        choice = input("Choose an option (1-4): ").strip()
+        clear()
 
         # Handle menu selection
         if choice == '1':
