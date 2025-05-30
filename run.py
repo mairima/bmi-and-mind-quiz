@@ -62,3 +62,11 @@ def show_rules():
 5. Results are saved only after completing a quiz.
 6. You can quit after completing a quiz. After the game ends, press any key to restart.
 """)
+
+# Input function that checks for valid float input
+def get_valid_float(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+
+    
