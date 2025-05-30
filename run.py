@@ -192,7 +192,7 @@ def main(restart=False):
             run_mind_quiz()
         elif choice == '4':
             clear()
-            print('Thank you for using Health & Mind Quiz Game')
+            print('Thank you for using BMI & Mind Quiz Game')
             exit()
         else:
             print(f"❌ {choice} is an invalid choice. Enter 1-4.")
@@ -206,6 +206,6 @@ def main(restart=False):
 # Entry point for the script
 if __name__ == "__main__":
     clear()
-    logo = pyfiglet.figlet_format("Health & Mind Quiz", font="big")
+    logo = pyfiglet.figlet_format("BMI & Mind Quiz", font="big")
     print(logo)
     main()
