@@ -33,7 +33,7 @@ bmi_tips = {
     "Overweight": "Be active and watch portion sizes.",
     "Obese": "Seek a structured plan with professional help."
 }
-# Store user data during the game
+# Store user data during the quiz
 user_data = {
     "name": "",
     "bmi": None,
@@ -49,7 +49,7 @@ def clear():
     print("\033c")
 
 
-# Function to display the rules of the game
+# Function to display the rules of the quiz
 def show_rules():
     print("\n=== QUIZ RULES ===\n")
     time.sleep(0.5)
@@ -140,20 +140,20 @@ def run_mind_quiz():
     user_data['mind_score'] = score
 
 
-# Restart the game loop
+# Restart the quiz loop
 def ask_restart():
     try:
         input("Quiz Over. Press Enter to start again...\n")
         clear()
         main(restart=True)
     except Exception:
-        print("Unexpected input. Restarting game...")
+        print("Unexpected input. Restarting quiz...")
         main(restart=True)
 
 
 # Main function: shows menu and starts quiz
 def main(restart=False):
-    print("=== WELCOME TO THE BMI & MIND QUIZ GAME ===")
+    print("=== WELCOME TO THE BMI & MIND QUIZ ===")
 
     # Ask for name only once (or if starting fresh)
     if not restart:
@@ -192,7 +192,7 @@ def main(restart=False):
             run_mind_quiz()
         elif choice == '4':
             clear()
-            print('Thank you for using BMI & Mind Quiz Game')
+            print('Thank you for using BMI & Mind Quiz')
             exit()
         else:
             print(f"❌ {choice} is an invalid choice. Enter 1-4.")
