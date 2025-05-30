@@ -8,3 +8,7 @@ import sys                  # For exiting the program if needed
 FILENAME = "quiz_results.csv"
 # Define the CSV file headers
 HEADERS = ["Name", "Date", "BMI", "BMI Category", "Mind Quiz Score"]
+# Create the file with headers if it doesn't exist yet
+if not os.path.exists(FILENAME):
+    with open(FILENAME, 'w', newline='') as f:
+        csv.writer(f).writerow(HEADERS)
