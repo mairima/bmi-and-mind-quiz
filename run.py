@@ -194,12 +194,17 @@ def main(restart=False):
             run_bmi_quiz()
         elif choice == '3':
             run_mind_quiz()
+        elif choice == '4':
+            clear()
+            print('Thank you for using Health & Mind Quiz Game')
+            exit()
         else:
-            print("Invalid choice. Enter 1-3.")
+            print(f"❌ {choice} is an invalid choice. Enter 1-4.")
+
 
         # If a quiz was taken, save and prompt to restart
         if user_data['bmi'] or user_data['mind_score']:
-            save_results()
+           
             ask_restart()
 
 
