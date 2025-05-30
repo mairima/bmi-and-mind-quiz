@@ -147,4 +147,5 @@ def run_bmi_quiz():
         
     # Reset previous quiz data
     user_data["bmi"] = None
-  
+    user_data["bmi_category"] = ""
+    
