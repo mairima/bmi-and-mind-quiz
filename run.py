@@ -116,7 +116,8 @@ def run_mind_quiz():
     score = 0
     # Iterate through each question and collect a valid response
     for trait, question in mind_questions.items():
-        while True: print("\n=== MIND PERSONALITY QUIZ ===\n")
+        while True: 
+            print("\n=== MIND PERSONALITY QUIZ ===\n")
             print("Enter 1 (lowest) to 5 (highest)")
             answer = input(f"{question}?: ")
             clear()            
@@ -125,10 +126,21 @@ def run_mind_quiz():
                 score += rating
                 # Show a tip for ratings less than 5
                 if rating < 5:
-                    print(f"Tip for {trait}: {mind_tips[trait]}")
+                            print(
+                        f"Q: {question}\n\n💡 Tip for {trait}: "
+                        f"{mind_tips[trait]}"
+                    )
+                    # time.sleep(4)
+                    input("\nPress Enter to Continue\n")
+                    clear()
+                else:
+                    clear()
                 break
-            print("Enter a number between 1 and 5.")
-    print(f"\n{user_data['name']}, total mind score: {score}/45")
+            clear()
+            print(f"❌ {answer} is invalid. Enter a number between 1 and 5.")
+
+    print("\n=== MIND PERSONALITY QUIZ RESULTS ===\n")
+    print(f"\n{user_data['name']}, total mind score: {score}/45\n")
     user_data['mind_score'] = score
 
 # Restart the game loop
