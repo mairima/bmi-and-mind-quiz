@@ -136,3 +136,8 @@ def run_bmi_quiz():
     # Main function: shows menu and starts quiz
     def main(restart=False):
     print("=== WELCOME TO THE HEALTH & MIND QUIZ GAME ===")
+    
+     # Ask for name only once (or if starting fresh)
+    if not restart or user_data['name'] == "":
+        name = input("Enter your name: ").strip()
+       
