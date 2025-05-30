@@ -101,4 +101,8 @@ def run_bmi_quiz():
     for trait, question in mind_questions.items():
         while True:
             answer = input(question)
-           
+            if answer.isdigit() and 1 <= int(answer) <= 5:
+                rating = int(answer)
+                score += rating
+       
+                
