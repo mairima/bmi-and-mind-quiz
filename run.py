@@ -1,3 +1,5 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Import necessary modules
+import csv                  # For writing quiz results to a CSV file
+import os                   # For checking file existence
+from datetime import datetime  # For timestamping results
+import sys                  # For exiting the program if needed
