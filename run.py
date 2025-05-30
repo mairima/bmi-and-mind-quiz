@@ -18,7 +18,7 @@ mind_questions = {
     "Confidence": "How confident are you in challenges?(1-5):",
     "Management": "How do you manage time, emotions, responsibilities?(1-5):",
     "Accepting criticism": "How open to receiving feedback for growth?(1-5):",
-    "Accept mistakes": "How well do you own and learn from it?(1-5): ",
+    "Accept mistakes": "How well do you own and learn from mistakes?(1-5): ",
     "Unhealthy competition": "Selfgrowth instead of comparing others?(1-5):",
     "Health": "Balanced diet, regular activity, restful sleep?(1-5): ",
     "Responsibility": "Standing for rights & respecting others?(1-5):"
