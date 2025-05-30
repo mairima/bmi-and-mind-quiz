@@ -96,7 +96,7 @@ def run_bmi_quiz():
     category = ("Underweight" if bmi < 18.5 else
                 "Normal" if bmi < 25 else
                 "Overweight" if bmi < 30 else "Obese")
-        print("\n=== BMI QUIZ RESULTS ===\n")
+    print("\n=== BMI QUIZ RESULTS ===\n")
     print(f"\n{user_data['name']}, your BMI is {bmi} ({category})")
 
     # Give a tip if not in the normal range
@@ -116,8 +116,10 @@ def run_mind_quiz():
     score = 0
     # Iterate through each question and collect a valid response
     for trait, question in mind_questions.items():
-        while True:
-            answer = input(question)
+        while True: print("\n=== MIND PERSONALITY QUIZ ===\n")
+            print("Enter 1 (lowest) to 5 (highest)")
+            answer = input(f"{question}?: ")
+            clear()            
             if answer.isdigit() and 1 <= int(answer) <= 5:
                 rating = int(answer)
                 score += rating
