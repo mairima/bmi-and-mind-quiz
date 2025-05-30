@@ -70,4 +70,10 @@ def get_valid_float(prompt):
             return float(input(prompt))
         except ValueError:
             print("Enter a valid number.")
-    
+  
+# Function to run the BMI quiz
+def run_bmi_quiz():
+    print("\n=== BMI QUIZ ===")
+    weight = get_valid_float("Enter weight in kg: ")
+    height = get_valid_float("Enter height in meters: ")
+    bmi = round(weight / (height ** 2), 1)  
