@@ -68,5 +68,6 @@ def get_valid_float(prompt):
     while True:
         try:
             return float(input(prompt))
-
+        except ValueError:
+            print("Enter a valid number.")
     
