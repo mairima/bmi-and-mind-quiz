@@ -87,11 +87,19 @@ To follow best practice, a flowchart was created to showcase the progression of 
 I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02c-77d6886f6edb?theme=light&version=v0.1&format=svg) to design my app flowchart with Chatgpt influence.
 
 ![screenshot](documentation/flowchart.png)
+![screenshot](documentation/wireframe.png)
 
 ## User Stories
 
 | Target | Expectation | Outcome |
 | --- | --- | --- |
+| As a user | I want to see the rules before starting the quiz | so that I can understand how the quiz works |
+| As a user | I want to calculate my BMI  | so that I can receive or find tips if my BMI is unhealthy |
+| As a user | I want to complete a mind personality quiz | so that I receive or find tips for each low-rated trait |
+| As a user | I want to input my name and have it validated properly | To ensure that each user's quiz session is personalized |
+| As a user | I want the option to restart the quiz after it ends
+| so that I can immediately retake the quiz if needed |
+| As a user | I want to exit the quiz from the main menu | so that I can  gracefully leave the application when needed |
 
 ## Features
 
@@ -105,6 +113,11 @@ I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02
 -Optional logo/title splash screen.
 
 ### Future Features
+ - **Personality Progress Tracker**: Store and visualize mind quiz scores over time. Store quiz scores in a CSV or database, and show a graph using matplotlib.
+ - **User Accounts Login System**: Let users sign in and view their history.
+ - **Email Results to Users**: Send quiz summaries via email.
+ - **Web Interface**: Build a web version.
+
 
 ## Tools & Technologies
 
@@ -123,6 +136,34 @@ I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02
 ### Data Model
 
 #### Flowchart
+
+```mermaid
+flowchart TD
+    A[Start Program] --> B[Display ASCII Logo]
+    B --> C[Ask for User Name]
+    C --> D[Show Main Menu]
+    D --> E1[Option 1: Show Rules]
+    E1 --> D
+    D --> E2[Option 2: Run BMI Quiz]
+    E2 --> F1[Ask for Weight]
+    F1 --> F2[Ask for Height]
+    F2 --> F3[Calculate BMI]
+    F3 --> F4[Display BMI Category & Tip]
+    F4 --> G[Ask to Restart]
+    D --> E3[Option 3: Run Mind Quiz]
+    E3 --> H1[Ask 8 Questions]
+    H1 --> H2{Rating < 5?}
+    H2 -- Yes --> H3[Show Tip for Trait]
+    H2 -- No --> H4[Continue to Next Question]
+    H3 --> H4
+    H4 -->|Next Q| H1
+    H1 --> H5[Show Total Score]
+    H5 --> G
+    D --> E4[Option 4: Exit Game]
+    E4 --> Z[End Program]
+		```
+	
+Source: [Mermaid Flowchart for bmi-and-mind-quiz](https://mermaid.live/edit#pako:eNpVU1GvmjAY_StNH_aExkJhSpYtino1md5NXZZdvA-NVGwGrSklV6_X_77SUhd4IHyc833fOYdygweRURjDYyHeDiciFdhN9xzoa5xuVVP_kCKXpHwFvd5XMEmnrDoX5ArG22S5BN9FLl4tf2IISTqu_oKjkOBXRSVYk5K2eGLwabo9iTewIoyDFeV1C04NOEPp81kxwQGKgeFt6oJWLWeG7IROh-86_FiTOZisluBnzd5dj29oc_SQ9Zuy_KRaeG5Hzv0HvOjAbXeQJqQ41AVRtFng0MCi-JFJszzRpFzIK_gEduzsqNhQn8waJcCGVk22XfOBsxJYKyvGs44Xu29hvQw1pKdovstnYc0s_NuGKMZz8AWE3-4t1jgBf2hlKYH9ClqgMb2ThDkxlrkWlojTRHA9rKaN7DW9qMdax29V4bY0Tj8s80Nr6moL28VCkQJsD0K607EIbUKdRLBLBMdgdmEKPP0_TjMb6Us60ym5M2oh6MFcsgzGStbUgyWVJWlKeGvwPVQnWtI9jPVjRo-kLtQe7vldt50JfxGidJ1S1PkJxkdSVLqqz5n-tlNGmlWPt5LyjMpE1FzBGAVmBoxv8KKrKOyHvr4PhnigbxH24BXGPYz7o89o4EcRQmgUDlB49-C72Yv6aDjCGIURikbDEQoiD9KMKSFX9j81v6sHSa3E9soPVun9H4rEF-c)
 
 #### Classes & Functions
 
