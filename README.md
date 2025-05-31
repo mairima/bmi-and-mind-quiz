@@ -6,6 +6,8 @@ Developer: Mairi Aissatou ([mairima](https://www.github.com/mairima))
 [![GitHub last commit](https://img.shields.io/github/last-commit/mairima/bmi-and-mind-quiz)](https://www.github.com/mairima/bmi-and-mind-quiz/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/mairima/bmi-and-mind-quiz)](https://www.github.com/mairima/bmi-and-mind-quiz)
 
+The BMI and Mind Quiz is a Python-based terminal application designed to promote self-awareness and healthy living. Users can calculate their Body Mass Index (BMI) and take an 8-question mental strength quiz that assesses traits like self-appreciation, confidence, time management, and emotional resilience. Personalized improvement tips are provided based on user responses. The tool is interactive, educational, and ideal for individuals looking to track both their physical and mental well-being.
+
 **Site Mockups**
 *([amiresponsive](https://ui.dev/amiresponsive?url=https://bmi-and-mind-quiz-250e063864a5.herokuapp.com))*
 
@@ -22,32 +24,67 @@ source: [bmi-and-mind-quiz amiresponsive](https://ui.dev/amiresponsive?url=https
 #### 1. Strategy
 
 **Purpose**
+- Help users reflect on their mental well-being and physical health by providing a quick and guided self-assessment.
 
 **Primary User Needs**
+-A simple, way to assess health and mindset.
+-Personalized feedback and improvement tips.
+-Option to track progress or retake the quiz.
 
 **Business Goals**
+-Encourage self-awareness.
+-Provide value through insights and tips.
+-Make the quiz lightweight and accessible to anyone with Python.
 
 #### 2. Scope
 
 **[Features](#features)** (see below)
 
 **Content Requirements**
+-Mindfulness-based quiz questions.
+-BMI health categorization.
+-Personalized feedback/tips per trait or BMI result.
+
+
 
 #### 3. Structure
 
 **Information Architecture**
-- **Hierarchy**:
-
+**Interaction Design**:
+- Menu-based navigation (View rules, Take BMI quiz, Take Mind quiz, Exit).
+- Linear question flow for quizzes.
+- Immediate feedback and summary scores.
 **User Flow**
+- Home → Menu → Selected Quiz → Tip Output → Restart
+- Persistent user data (name, score, BMI) stored in memory or files.
 
 #### 4. Skeleton
 
+**Navigation Design**:
+
+Simple numeric menu: 1 for rules, 2 for BMI, 3 for Mind Quiz, 4 for Exit.
+Prompts are minimal and contextual.
+Validation for name input, quiz answers, and restart flow.
+
 **[Wireframes](#wireframes)** (see below)
+
+#### 5. Surface
+
+**Visual Design Elements**
+- Visual Design:
+- ASCII logo using pyfiglet adds a visual identity.
+- Consistent section titles (e.g., === BMI QUIZ ===) improve readability.
+- Emojis (✅❌💡) enhance user feedback.
+
+**Tone and Experience**:
+
+- Friendly, motivational tone.
+- Immediate, actionable tips reinforce a growth mindset.
 
 ## Wireframes
 
 To follow best practice, a flowchart was created to showcase the progression of the Python app.
-I've used [Lucidchart](https://www.lucidchart.com/pages/examples/flowchart-maker) to design my app flowchart.
+I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02c-77d6886f6edb?theme=light&version=v0.1&format=svg) to design my app flowchart with Chatgpt influence.
 
 ![screenshot](documentation/flowchart.png)
 
@@ -59,7 +96,13 @@ I've used [Lucidchart](https://www.lucidchart.com/pages/examples/flowchart-maker
 ## Features
 
 ### Existing Features
-
+| Feature | Notes | Screenshot |
+| --- | --- | --- |
+-BMI Calculator with health category feedback.
+-8-question mind personality quiz.
+-Improvement tips for each response below optimal rating.
+-Clear rules and menu navigation.
+-Optional logo/title splash screen.
 
 ### Future Features
 
