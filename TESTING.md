@@ -2,6 +2,17 @@
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
 
+## 📋 Table of Contents
+
+- [Testing](#testing)
+  - [Code Validation](#code-validation)
+    - [Python](#python)
+  - [Presentation](#presentation)
+  - [Browser Compatibility](#browser-compatibility)
+  - [Lighthouse Audit](#lighthouse-audit)
+  - [Defensive Programming](#defensive-programming)
+  - [User Story Testing](#user-story-testing)
+  
 ## Code Validation
 
 ### Python
