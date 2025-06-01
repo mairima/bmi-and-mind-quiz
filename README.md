@@ -8,12 +8,16 @@ Developer: Mairi Aissatou ([mairima](https://www.github.com/mairima))
 
 The BMI and Mind Quiz is a Python-based terminal application designed to promote self-awareness and healthy living. Users can calculate their Body Mass Index (BMI) and take an 8-question mental strength quiz that assesses traits like self-appreciation, confidence, time management, and emotional resilience. Personalized improvement tips are provided based on user responses. The tool is interactive, educational, and ideal for individuals looking to track both their physical and mental well-being.
 
+Live website on Heroku: *([BMI & MIND QUiZ](https://bmi-and-mind-quiz-250e063864a5.herokuapp.com/))*
+
+
 **Site Mockups**
-*([amiresponsive](https://ui.dev/amiresponsive?url=https://bmi-and-mind-quiz-250e063864a5.herokuapp.com))*
+
+Source:*([amiresponsive](https://ui.dev/amiresponsive?url=https://bmi-and-mind-quiz-250e063864a5.herokuapp.com))*
 
 ![screenshot](documentation/mockup.png)
 
-source: [bmi-and-mind-quiz amiresponsive](https://ui.dev/amiresponsive?url=https://bmi-and-mind-quiz-250e063864a5.herokuapp.com)
+
 
 > [!IMPORTANT]
 > The examples in these templates are strongly influenced by the Code Institute walkthrough project called "Love Sandwiches".
@@ -104,8 +108,8 @@ I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02
 ## Features
 
 ### Existing Features
-| Feature | Notes | Screenshot |
-| --- | --- | --- |
+| Feature |
+| --- |
 -BMI Calculator with health category feedback.
 -8-question mind personality quiz.
 -Improvement tips for each response below optimal rating.
@@ -129,7 +133,6 @@ I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02
 | [![badge](https://img.shields.io/badge/VSCode-grey?logo=htmx&logoColor=007ACC)](https://code.visualstudio.com) | Local IDE for development. |
 | [![badge](https://img.shields.io/badge/Python-grey?logo=python&logoColor=3776AB)](https://www.python.org) | Back-end programming language. |
 | [![badge](https://img.shields.io/badge/Heroku-grey?logo=heroku&logoColor=430098)](https://www.heroku.com) | Hosting the deployed back-end site. |
-| [![badge](https://img.shields.io/badge/Lucidchart-grey?logo=lucid&logoColor=F97B2C)](https://www.lucidchart.com) | Flow diagrams for mapping the app's logic. |
 
 ## Database Design
 
@@ -139,31 +142,56 @@ I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02
 
 ```mermaid
 flowchart TD
-    A[Start Program] --> B[Display ASCII Logo]
-    B --> C[Ask for User Name]
-    C --> D[Show Main Menu]
-    D --> E1[Option 1: Show Rules]
-    E1 --> D
-    D --> E2[Option 2: Run BMI Quiz]
-    E2 --> F1[Ask for Weight]
-    F1 --> F2[Ask for Height]
-    F2 --> F3[Calculate BMI]
-    F3 --> F4[Display BMI Category & Tip]
-    F4 --> G[Ask to Restart]
-    D --> E3[Option 3: Run Mind Quiz]
-    E3 --> H1[Ask 8 Questions]
-    H1 --> H2{Rating < 5?}
-    H2 -- Yes --> H3[Show Tip for Trait]
-    H2 -- No --> H4[Continue to Next Question]
-    H3 --> H4
-    H4 -->|Next Q| H1
-    H1 --> H5[Show Total Score]
-    H5 --> G
-    D --> E4[Option 4: Exit Game]
-    E4 --> Z[End Program]
-		```
-	
-Source: [Mermaid Flowchart for bmi-and-mind-quiz](https://mermaid.live/edit#pako:eNpVU1GvmjAY_StNH_aExkJhSpYtino1md5NXZZdvA-NVGwGrSklV6_X_77SUhd4IHyc833fOYdygweRURjDYyHeDiciFdhN9xzoa5xuVVP_kCKXpHwFvd5XMEmnrDoX5ArG22S5BN9FLl4tf2IISTqu_oKjkOBXRSVYk5K2eGLwabo9iTewIoyDFeV1C04NOEPp81kxwQGKgeFt6oJWLWeG7IROh-86_FiTOZisluBnzd5dj29oc_SQ9Zuy_KRaeG5Hzv0HvOjAbXeQJqQ41AVRtFng0MCi-JFJszzRpFzIK_gEduzsqNhQn8waJcCGVk22XfOBsxJYKyvGs44Xu29hvQw1pKdovstnYc0s_NuGKMZz8AWE3-4t1jgBf2hlKYH9ClqgMb2ThDkxlrkWlojTRHA9rKaN7DW9qMdax29V4bY0Tj8s80Nr6moL28VCkQJsD0K607EIbUKdRLBLBMdgdmEKPP0_TjMb6Us60ym5M2oh6MFcsgzGStbUgyWVJWlKeGvwPVQnWtI9jPVjRo-kLtQe7vldt50JfxGidJ1S1PkJxkdSVLqqz5n-tlNGmlWPt5LyjMpE1FzBGAVmBoxv8KKrKOyHvr4PhnigbxH24BXGPYz7o89o4EcRQmgUDlB49-C72Yv6aDjCGIURikbDEQoiD9KMKSFX9j81v6sHSa3E9soPVun9H4rEF-c)
+    Start(["Start Script"])
+    Clear1["clear()"]
+    PrintLogo["Display ASCII Title"]
+    WaitEnter["Wait for Enter"]
+    MainCall["main(restart=False)"]
+
+    Start --> Clear1 --> PrintLogo --> WaitEnter --> MainCall
+
+    subgraph MainLoop["main() loop"]
+        GetName{"Is name already stored?"}
+        AskName["Ask for user name"]
+        ValidateName{"Valid name?"}
+        StoreName["Store name in user_data"]
+        ResetData["Reset previous quiz data"]
+        ShowMenu["Show Main Menu"]
+        MenuChoice{"User selects option"}
+
+        GetName -->|False| AskName --> ValidateName
+        ValidateName -->|Yes| StoreName --> ResetData
+        ValidateName -->|No| AskName
+
+        GetName -->|True| ResetData
+        ResetData --> ShowMenu --> MenuChoice
+
+        MenuChoice -->|1| Rules
+        MenuChoice -->|2| BMIQuiz
+        MenuChoice -->|3| MindQuiz
+        MenuChoice -->|4| ExitGame
+        MenuChoice -->|Invalid| InvalidChoice
+
+        Rules["show_rules()"]
+        BMIQuiz["run_bmi_quiz()"]
+        MindQuiz["run_mind_quiz()"]
+        ExitGame["Exit Program"]
+        InvalidChoice["Show invalid input message"]
+
+        BMIQuiz --> CheckBMISave
+        MindQuiz --> CheckMindSave
+
+        CheckBMISave["Check if BMI taken"] --> AskRestart
+        CheckMindSave["Check if Mind quiz taken"] --> AskRestart
+
+        AskRestart["ask_restart()"] --> Clear2["clear()"] --> RestartMain["main(restart=True)"]
+    end
+
+    ExitGame --> End(["End Script"])
+```
+I used ChatGPT to help generate a Mermaid Flowchart with my Python functionalities.
+
+Source: [Mermaid Flowchart for bmi-and-mind-quiz](https://mermaid.live/edit#pako:eNp9VW1v2jAQ_iuWP7USrQgFViJtUwddhVSqrXSbtlEhNzFgNbEz22lLgf--O-eFBErzITmfn3vu8dm-rGigQk59OovUc7Bg2pK7wUQSeMYWRkd_J9QZZBxokdgJvT_OpvsRZ9qD6QCNo2OYySa-aSHttZormBsIk0RsSS7G_eGQ3Akb8RL3iwl7KS3XgEObzJQmzlFCRkzIPosiQMRgHmluUMvHrywyPMtY0UpOTj7lspxZCnGjMp0bFcwFgUkf5polCzdxrVRSpDwmEYxKRfhccXvDYr6a0KEhEizCIs1ZuCTGKs3DzxO62aIvzCOigQ8st8bUgAiMq7H-ZJEImeU5tRs6VJ1ujClyQmdnCoR0tFNgYDXaW264HYAX8M4mieZPQqWG_EvFK9kLGC_U84jLFPnBdAUh6Kih0NFfKBGg1h-4IMMjHlhDVGKFkk7zXsmw9Gu3eeuiLm43qmt_uyIu8jc3620BXGS5vHfCblSZ7ZCmO52CpDfISpfLVtQmO0JlCaqsW68j9oA1jbg5CGityZfR8DtsxUHI2ZqMhAzfxbTX5PJF2KtaAXcwQ_mEpVmT3NgX76TCxhtY51TjoHKv8cmlAkSncvoQiykeoh1QITZHxTB8C1boBRiacF0VXMG4hqkpLU6kyJzwTVJLYm4Mm_NKM6gIzVrCggeP4BizJ76vcgtBT4bZoqqxkN8NiZghP7HskcNBv3cMcMBus-60E1ywVqPRl12_gxy1BpJ7gYKZx2neBV05tz2vVWvFxeVAIN7g3Q6KB367HVyGRcZiVxzBpQzxBwCfWvunDTrXIqS-BZYGjbkGbhjSFXJMqF1wbG4-mCGfsTSCuIncQFjC5B-l4iJSq3S-oP4MO0KDpgle24FgeAxKCGjjuq9SaanfcwzUX9EX6nvdzmmnBe_mebsJr267QZfUP2m3T3sfvGar2_U8r9dpep1Ng766rN6pd95rt71O1-v2znveWbdBeSigo4yyv6D7GTYoS60aL2WQidj8B95tPhU)
 
 #### Classes & Functions
 
@@ -174,9 +202,9 @@ The program uses classes as a blueprint for the project's object-oriented progra
 ## Agile Development Process
 
 ### GitHub Projects
-[GitHub Projects](https://www.github.com/mairima/bmi-and-mind-quiz/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
+[GitHub Projects](https://www.github.com/mairima/bmi-and-mind-quiz/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
 
-![screenshot](documentation/gh-projects.png)
+![screenshot](documentation\gh-projects.png)
 
 ### MoSCoW Prioritization
 
@@ -215,11 +243,11 @@ Heroku needs some additional files in order to deploy properly.
 - [requirements.txt](requirements.txt)
 - [Procfile](Procfile)
 
-You can install this project's **[requirements.txt](requirements.txt)** (*where applicable*) using:
+Install this project's **[requirements.txt](requirements.txt)** (*where applicable*) using:
 
 - `pip3 install -r requirements.txt`
 
-If you have your own packages that have been installed, then the requirements file needs updated using:
+If ones own packages have been installed, then the requirements file needs update using:
 
 - `pip3 freeze --local > requirements.txt`
 
@@ -256,7 +284,7 @@ If using any confidential credentials, such as `CREDS.json` or `env.py` data, th
 
 #### Cloning
 
-You can clone the repository by following these steps:
+Clone the repository by following these steps:
 
 1. Go to the [GitHub repository](https://www.github.com/mairima/bmi-and-mind-quiz).
 2. Locate and click on the green "Code" button at the very top, above the commits and files.
@@ -296,11 +324,13 @@ There are no remaining major differences between the local version when compared
 | [BroCode](https://www.youtube.com/watch?v=ag8NtD1e0Kc) | Inspiration from Python tutorials|
 | [Python Tutor](https://pythontutor.com) | Additional Python help |
 | [ChatGPT](https://chatgpt.com) | Help with code logic and explanations |
+| [Stackoverflow](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python/50921841#50921841) | Help python code on clear function|
+
 
 ### Acknowledgements
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/TravelTimN) for the support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) Tutor Team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and impostor syndrome.
+- I would like to thank the [Code Institute](https://codeinstitute.net) Tutor Team and facilitator for their assistance with advice.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the contents; it inspires. 
 
 
