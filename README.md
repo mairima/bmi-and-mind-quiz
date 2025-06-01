@@ -107,7 +107,7 @@ I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02
 ## Features
 
 ### Existing Features
-| Feature |Notes | Screenshot ![screenshot]()
+| Feature |Notes | Screenshot|
 | --- | --- | --- |
 -BMI Calculator with health category feedback.|Allows users to input height and weight to compute BMI and categorize it (e.g., Normal, Overweight, Obese).| ![screenshot](documentation/features/bmi.png)
 -8-question mind personality quiz.|- Real-time feedback for low scores. Summed mind score out of 40 | ![screenshot](documentation/features/mindquestionspy.png)|
