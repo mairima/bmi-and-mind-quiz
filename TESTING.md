@@ -1,6 +1,4 @@
 # Testing
-> [!NOTE]
-> Return back to the [README.md](README.md) file.
 
 ## 📋 Table of Contents
 
@@ -12,7 +10,11 @@
   - [Lighthouse Audit](#lighthouse-audit)
   - [Defensive Programming](#defensive-programming)
   - [User Story Testing](#user-story-testing)
-  
+
+
+> [!NOTE]
+> Return back to the [README.md](README.md) file from here if needed.
+
 ## Code Validation
 
 ### Python
