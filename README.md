@@ -1,39 +1,4 @@
 # [bmi-and-mind-quiz](https://bmi-and-mind-quiz-250e063864a5.herokuapp.com)
-## 📚 Table of Contents
-
-- [Project Title](#bmi-and-mind-quiz)
-- [Project Description](#project-description)
-- [Live Site](#live-website-on-heroku)
-- [Site Mockups](#site-mockups)
-- [UX](#ux)
-  - [The 5 Planes of UX](#the-5-planes-of-ux)
-    - [Strategy](#1-strategy)
-    - [Scope](#2-scope)
-    - [Structure](#3-structure)
-    - [Skeleton](#4-skeleton)
-    - [Surface](#5-surface)
-- [Wireframes](#wireframes)
-- [User Stories](#user-stories)
-- [Features](#features)
-  - [Existing Features](#existing-features)
-  - [Future Features](#future-features)
-- [Tools & Technologies](#tools--technologies)
-- [Database Design](#database-design)
-  - [Data Model](#data-model)
-  - [Flowchart](#flowchart)
-- [Agile Development Process](#agile-development-process)
-  - [GitHub Projects](#github-projects)
-  - [MoSCoW Prioritization](#moscow-prioritization)
-- [Testing](#testing)
-- [Deployment](#deployment)
-  - [Heroku Deployment](#heroku-deployment)
-  - [Local Development](#local-development)
-    - [Cloning](#cloning)
-    - [Forking](#forking)
-- [Credits](#credits)
-  - [Content](#content)
-  - [Acknowledgements](#acknowledgements)
-
 
 ## Project Description
 Developer: Mairi Aissatou ([mairima](https://www.github.com/mairima))
@@ -136,20 +101,19 @@ I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02
 | As a user | I want to calculate my BMI  | so that I can receive or find tips if my BMI is unhealthy |
 | As a user | I want to complete a mind personality quiz | so that I receive or find tips for each low-rated trait |
 | As a user | I want to input my name and have it validated properly | To ensure that each user's quiz session is personalized |
-| As a user | I want the option to restart the quiz after it ends
-| so that I can immediately retake the quiz if needed |
+| As a user | I want the option to restart the quiz after it ends| so that I can immediately retake the quiz if needed |
 | As a user | I want to exit the quiz from the main menu | so that I can  gracefully leave the application when needed |
 
 ## Features
 
 ### Existing Features
-| Feature |
-| --- |
--BMI Calculator with health category feedback.
--8-question mind personality quiz.
--Improvement tips for each response below optimal rating.
--Clear rules and menu navigation.
--Optional logo/title splash screen.
+| Feature |Notes | Screenshot ![screenshot]()
+| --- | --- | --- |
+-BMI Calculator with health category feedback.|Allows users to input height and weight to compute BMI and categorize it (e.g., Normal, Overweight, Obese).| ![screenshot](documentation/features/bmi.png)
+-8-question mind personality quiz.|- Real-time feedback for low scores. Summed mind score out of 40 | ![screenshot](documentation/features/mindquestionspy.png)|
+-Improvement tips for each response below optimal rating.|Provides improvement tips when user inputs a low score (<5) on a mental trait or bmi which needs improvemnet |  ![screenshot](documentation/features/tipspy.png)|
+-Clear rules and menu navigation.|Main menu with numbered options to guide the user. |![screenshot](documentation/features/rules.png) |
+-Optional logo/title splash screen.|ASCII-art title screen using pyfiglet. | ![screenshot](documentation/features/pyfiglet.png) |
 
 ### Future Features
  - **Personality Progress Tracker**: Store and visualize mind quiz scores over time. Store quiz scores in a CSV or database, and show a graph using matplotlib.
@@ -248,6 +212,7 @@ I've decomposed my Epics into User Stories for prioritizing and implementing the
 - **Must Have**: guaranteed to be delivered - required to Pass the project (*max ~60% of stories*)
 - **Should Have**: adds significant value, but not vital (*~20% of stories*)
 - **Could Have**: has small impact if left out (*the rest ~20% of stories*)
+- **Won't Have**: not a priority for this iteration - future features
 
 ## Testing
 
