@@ -354,12 +354,19 @@ There are no remaining major differences between the local version when compared
 | Source | Notes |
 | --- | --- |
 | [Markdown Builder](https://markdown.2bn.dev) | Help generating Markdown files |
-| [Love Sandwiches](https://codeinstitute.net) | Code Institute walkthrough project inspiration |
-| [Real Python](https://realpython.com/python-quiz-application) | Inspiration for a quiz app |
+| [Code Institute LMS](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+CPP_06_20+3/courseware/e6130704ad7f4d7697f37ceadb1606d2/33d76c3a519a4ef5bb42375fe9c5912a/) | Inspiration for most topics of the code |
+| [Love Sandwiches](https://codeinstitute.net) | Code Institute walkthrough project inspiration for most topics of the code |
+| [Python Library](https://docs.python.org/3/library/stdtypes.html) | Inspiration for code: time for delay between printed messages, sys for 	Program exit and system handling |
+| [Real Python](https://realpython.com/python-quiz-application) | Inspiration for a quiz app, Python dictionary |
 | [BroCode](https://www.youtube.com/watch?v=ag8NtD1e0Kc) | Inspiration from Python tutorials|
 | [Python Tutor](https://pythontutor.com) | Additional Python help |
 | [ChatGPT](https://chatgpt.com) | Help with code logic and explanations |
-| [Stackoverflow](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python/50921841#50921841) | Help python code on clear function|
+| [Stackoverflow](https://stackoverflow.com/questions/2084508/clear-the-terminal-in-python/50921841#50921841) | Help python code on clear function. code: def clear(): print("\033c")|
+| [pyfiglet](https://pypi.org/project/pyfiglet/) |Purpose: Display a title screen/logo in ASCII art. installed with pip install pyfiglet.<br>-Code: pyfiglet.figlet_format("BMI & Mind Quiz", font="big")|
+| [time.sleep()](https://www.digitalocean.com/community/tutorials/python-time-sleep) |Purpose:  for pacing.|
+| [BMI](https://www.nhlbi.nih.gov/calculate-your-bmi) |bmi = round(weight / (height ** 2), 1)|
+| [BMI & Mind-Tips and questions](https://openai.com/index/chatgpt//python-time-sleep) |[Appreciation](https://self-compassion.org/self-compassion-practices/), [Management](https://inspiredbyislam.wordpress.com/wp-content/uploads/2022/08/getting-things-done-the-art-of-stress-free-productivity-david-allen-z-lib.org_.pdf), [Accepting criticism](https://www.goodreads.com/book/show/18114120-thanks-for-the-feedback), [Selfgrowth](https://selfdeterminationtheory.org/SDT/documents/2000_RyanDeci_SDT.pdf), [Health](https://www.who.int/initiatives/behealthy/healthy-diet), [Responsibility](https://www.international-school.edu.rs/responsibility-and-assertive-communication/#:~:text=Assertiveness%20training%20is%20designed%20to,translates%20to%20relationships%20outside%20school.) |
+
 
 
 ### Acknowledgements
