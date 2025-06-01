@@ -54,5 +54,9 @@ Defensive programming was manually tested with the below user acceptance testing
 | 7.As a user, I want a welcome screen with a splash logo |Terminal prints app name in ASCII art | Start app with pyfiglet installed| "BMI & Mind Quiz" banner shown | Pass |
 | 8.As a user, I want to see my total score after mind quiz | Total score (/40) or (/45) shown after final question | Input valid answers to all questions | Prints: “Your total mind score is yy/40”|  Pass|
 
+## Known Issues
 
+- Emojis are cut-off when viewing the application from Firefox.
+- The Python terminal doesn't work well with Safari, and sometimes uses cannot type in the application.
+- If a user types `CTRL`+`C` in the terminal on the live site, they can manually stop the application and receive and error.
 
