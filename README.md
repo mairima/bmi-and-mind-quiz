@@ -15,8 +15,7 @@ Live website on Heroku: *([BMI & MIND QUiZ](https://bmi-and-mind-quiz-250e063864
 
 Source:*([amiresponsive](https://ui.dev/amiresponsive?url=https://bmi-and-mind-quiz-250e063864a5.herokuapp.com))*
 
-![screenshot](documentation/mockup.png)
-
+![App Screenshot](documentation/Screenshots/mockup.png)
 
 
 > [!IMPORTANT]
@@ -90,8 +89,8 @@ Validation for name input, quiz answers, and restart flow.
 To follow best practice, a flowchart was created to showcase the progression of the Python app.
 I've used [mermaidchart](https://www.mermaidchart.com/raw/545df7e8-5185-41fd-b02c-77d6886f6edb?theme=light&version=v0.1&format=svg) to design my app flowchart with Chatgpt influence.
 
-![screenshot](documentation/flowchart.png)
-![screenshot](documentation/wireframe.png)
+![screenshot](documentation/Screenshots/flowchart.png)
+![screenshot](documentation/Screenshots/wireframe.png)
 
 ## User Stories
 
@@ -204,7 +203,7 @@ The program uses classes as a blueprint for the project's object-oriented progra
 ### GitHub Projects
 [GitHub Projects](https://www.github.com/mairima/bmi-and-mind-quiz/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
 
-![screenshot](documentation\gh-projects.png)
+![screenshot](documentation/Screenshots/gh-projects.png)
 
 ### MoSCoW Prioritization
 
